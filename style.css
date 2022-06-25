@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Dongle-Regular';
+    src: local('Dongle-Regular'), url('./fonts/dongle/Dongle-Regular.ttf');
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    color: rgb(87, 87, 87);
+    background-color: #4b4b4b;
+    font-family: 'Dongle-Regular';
+    /* padding: 2rem; */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline-width: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* ============================= */
+.header {
+    background-color: #fff;
+}
+
+.header-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* set chiều rộng cho menu con */
+}
+
+.logo {
+    max-width: 4rem;
+}
+.logo img {
+    border: 2px solid rgb(4, 141, 134);
+    border-radius: 6px 6px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu-item {
+    list-style-type: none; /* bỏ dấu chấm trước thẻ li */
+    margin: 0 1rem;
+}
+.menu-item:hover .menu-child {
+    opacity: 1;
+    visibility: visible;
+}
+.menu-link {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.7rem;
+    display: block;
+}
+.menu-child {
+    position: absolute;
+    top: 100%; /* set vị trí nằm phía dưới menu cha */
+    left: 0;
+    width: 100%; /* set chiều rộng bằng header-inner */
+    background-color: #fff;
+    display: flex;
+
+    /* ẩn đi khi ko hover */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25 linear;
+}
+.menu-child-item {
+    width: 33.333%; /* hiện 3 cột */
+}
+.menu-child-item h4 {
+    padding-left: 1.5rem;
+    color: white;
+    background-color: rgb(24, 129, 129);
+    font-size: 1.5rem;
+}
+.menu-child-list {
+    padding-left: 1.5rem;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+.border-menu-child-item-left {
+    border-right: 1px solid #eee;
+}
+.menu-child-link {
+    color: rgb(34, 34, 34);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
